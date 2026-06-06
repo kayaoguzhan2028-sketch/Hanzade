@@ -1,0 +1,341 @@
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  --bg-ivory:   #F7F1E6;
+  --surface:    #FBF7EF;
+  --ink:        #2B211A;
+  --ink-soft:   #5C5142;
+  --gold:       #B79A6E;
+  --gold-deep:  #A8895C;
+  --oxblood:    #9A3324;
+  --line:       rgba(43,33,26,.12);
+
+  --font-display: 'Cormorant', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { display: block; max-width: 100%; }
+
+address { font-style: normal; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h1 em, h2 em { font-style: italic; }
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.sec-num {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--gold);
+  margin-right: 0.35rem;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background: var(--oxblood);
+  color: var(--bg-ivory);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.875rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover { background: var(--ink); color: var(--bg-ivory); }
+
+.btn-wa-header {
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--oxblood);
+  color: var(--oxblood);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-wa-header:hover { background: var(--oxblood); color: var(--bg-ivory); }
+
+/* ============================================================
+   PLACEHOLDER IMAGES
+   ============================================================ */
+.img-ph {
+  background: var(--line);
+  width: 100%;
+}
+.ratio-3-4 { aspect-ratio: 3 / 4; }
+.ratio-4-3 { aspect-ratio: 4 / 3; }
+.ratio-1-1 { aspect-ratio: 1 / 1; }
+
+.logo-placeholder {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.85rem;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-ivory);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  padding: 0.875rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+  font-size: 0.875rem;
+}
+
+.main-nav a { color: var(--ink-soft); transition: color 0.2s; }
+.main-nav a:hover { color: var(--ink); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+
+.hero-img-area {
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  min-height: 480px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 3rem 3rem 4rem;
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-surface { background: var(--surface); }
+
+/* Reyon grid */
+.reyon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.reyon-kart { display: block; }
+
+.reyon-kart .img-ph { transition: opacity 0.25s; }
+.reyon-kart:hover .img-ph { opacity: 0.82; }
+
+.reyon-meta {
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--line);
+  margin-top: 0.75rem;
+}
+
+.reyon-adi {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.reyon-alt {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.2rem;
+}
+
+.reyon-featured .reyon-adi { color: var(--gold-deep); }
+
+/* Atölye grid */
+.atolye-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.atolye-metin p {
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.atolye-metin .btn-outline { margin-top: 0.5rem; }
+
+/* Etkinlik grid */
+.etkinlik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.portfolyo-link-wrap {
+  text-align: right;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.portfolyo-link {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+.portfolyo-link:hover { color: var(--ink); }
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band {
+  border-top: 1px solid var(--line);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.cta-band p {
+  color: var(--ink-soft);
+  margin: 0.75rem 0 2rem;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 0;
+  background: var(--surface);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nap {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+.nap strong { color: var(--ink); }
+.nap a:hover { color: var(--oxblood); }
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   MOBİL
+   ============================================================ */
+@media (max-width: 768px) {
+  .header-inner { flex-wrap: wrap; gap: 0.75rem; }
+  .main-nav { display: none; } /* hamburger menü ileride */
+
+  .hero { grid-template-columns: 1fr; }
+  .hero-img-area { min-height: 260px; border-right: none; border-bottom: 1px solid var(--line); }
+  .hero-text { padding: 2rem 1.25rem; }
+
+  .reyon-grid { grid-template-columns: 1fr; }
+  .atolye-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .etkinlik-grid { grid-template-columns: 1fr 1fr; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
